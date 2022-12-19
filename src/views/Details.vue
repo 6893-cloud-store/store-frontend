@@ -13,7 +13,7 @@
               <router-link to>parameters</router-link>
             </li>
             <li>
-              <router-link to>users comments</router-link>
+              <router-link to>comments</router-link>
             </li>
           </ul>
         </div>
@@ -27,13 +27,13 @@
       <div class="block">
         <el-carousel height="560px" v-if="productPicture.length>1">
           <el-carousel-item v-for="item in productPicture" :key="item.id">
-            <img style="height:560px;" :src="item.product_picture.includes('http:')?item.product_picture:$target + item.product_picture" :alt="item.intro" />
+            <img style="height:560px;" :src="item.product_picture.includes('http:')?item.product_picture:'https://6156-pictures.s3.amazonaws.com/' + item.product_picture" :alt="item.intro" />
           </el-carousel-item>
         </el-carousel>
         <div v-if="productPicture.length==1">
           <img
             style="height:560px;"
-            :src="productPicture[0].product_picture.includes('http:')?productPicture[0].product_picture:$target + productPicture[0].product_picture"
+            :src="productPicture[0].product_picture.includes('http:')?productPicture[0].product_picture: 'https://6156-pictures.s3.amazonaws.com/' + productPicture[0].product_picture"
             :alt="productPicture[0].intro"
           />
         </div>

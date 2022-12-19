@@ -20,7 +20,10 @@
           <el-button size="medium" type="primary" @click="Login" style="width:100%;">login</el-button>
         </el-form-item>
         <el-form-item>
-          <el-button size="medium" type="primary" @click="LoginGoogle" style="width:100%;">login via Google</el-button>
+          <el-button size="medium" type="primary" @click="LoginOauth" style="width:100%;">associate with Github</el-button>
+        </el-form-item>
+        <el-form-item>
+          <el-button size="medium" type="primary" @click="LoginOauth2" style="width:100%;">login via Github</el-button>
         </el-form-item>
       </el-form>
     </el-dialog>
@@ -28,6 +31,7 @@
 </template>
 <script>
 import { mapActions } from "vuex";
+// import router from "@/router";
 
 export default {
   name: "MyLogin",
@@ -124,6 +128,46 @@ export default {
           return false;
         }
       });
+    },
+    LoginOauth() {
+      this.$axios
+          .get("/api/user/oauth",{})
+          .then(res => {
+            if (res.data.code === "001") {
+              // 跳转到新页面
+              window.open(res.data.url, "blank")
+            } else {
+              // 清空输入框的校验状态
+              this.$refs["ruleForm"].resetFields();
+              // 弹出通知框提示登录失败信息
+              this.notifyError(res.data.msg);
+            }
+          })
+    },
+    LoginOauth2() {
+      // 通过element自定义表单校验规则，校验用户输入的用户信息
+      this.$axios
+          .get("/api/oauth/data",{})
+          .then(res => {
+            if (res.data.code === "001") {
+
+              console.log(res.data);
+              // 隐藏登录组件
+              this.isLogin = false;
+              // 登录信息存到本地
+              let user = JSON.stringify(res.data.data);
+              localStorage.setItem("user", user);
+              // 登录信息存到vuex
+              this.setUser(res.data.data);
+              // 弹出通知框提示登录成功信息
+              this.notifySucceed(res.data.msg);
+            } else {
+              // 清空输入框的校验状态
+              this.$refs["ruleForm"].resetFields();
+              // 弹出通知框提示登录失败信息
+              this.notifyError(res.data.msg);
+            }
+          })
     }
   }
 };

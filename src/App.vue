@@ -52,15 +52,15 @@
               <img src="./assets/imgs/logo.png" alt />
             </router-link>
           </div>
-          <el-menu-item index="/">Home</el-menu-item>
+<!--          <el-menu-item index="/">Home</el-menu-item>-->
           <el-menu-item index="/goods">All Items</el-menu-item>
           <el-menu-item index="/about">About Us</el-menu-item>
 
-<!--          <div class="so">-->
-<!--            <el-input placeholder="Please enter searching contents" v-model="search">-->
-<!--              <el-button slot="append" icon="el-icon-search" @click="searchClick"></el-button>-->
-<!--            </el-input>-->
-<!--          </div>-->
+          <div class="so">
+            <el-input placeholder="Please enter searching contents" v-model="search">
+              <el-button slot="append" icon="el-icon-search" @click="searchClick"></el-button>
+            </el-input>
+          </div>
         </el-menu>
       </el-header>
       <!-- 顶栏容器END -->
@@ -97,8 +97,8 @@
           </div>
           <div class="mod_help">
             <p>
-              <router-link to="/">Home</router-link>
-              <span>|</span>
+<!--              <router-link to="/">Home</router-link>-->
+<!--              <span>|</span>-->
               <router-link to="/goods">All Items</router-link>
               <span>|</span>
               <router-link to="/about">About Us</router-link>

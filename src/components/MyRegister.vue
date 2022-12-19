@@ -32,13 +32,10 @@
           ></el-input>
         </el-form-item>
         <el-form-item prop="phone">
-          <el-input prefix-icon="el-icon-view" placeholder="please enter phone number" v-model="RegisterUser.phone"></el-input>
+          <el-input prefix-icon="el-icon-view" placeholder="please enter email" v-model="RegisterUser.email"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button size="medium" type="primary" @click="Register" style="width:100%;">register</el-button>
-        </el-form-item>
-        <el-form-item>
-          <el-button size="medium" type="primary" @click="RegisterGoogle" style="width:100%;">register via Google</el-button>
         </el-form-item>
       </el-form>
     </el-dialog>
@@ -113,7 +110,7 @@ export default {
         name: "",
         pass: "",
         confirmPass: "",
-        phone: ""
+        email: ""
       },
       // 用户信息校验规则,validator(校验方法),trigger(触发方式),blur为在组件 Input 失去焦点时触发
       rules: {
@@ -148,7 +145,7 @@ export default {
             .post("/api/user/register", {
               userName: this.RegisterUser.name,
               password: this.RegisterUser.pass,
-              userPhonenumber: this.RegisterUser.phone
+              email: this.RegisterUser.email
             })
             .then(res => {
               // “001”代表注册成功，其他的均为失败

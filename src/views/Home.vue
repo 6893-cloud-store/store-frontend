@@ -22,7 +22,7 @@
           <div class="box-bd">
             <div class="promo-list">
               <router-link to>
-                <img :src="$target +'public/imgs/phone/phone.png'" />
+                <img :src="'https://6156-pictures.s3.amazonaws.com/' +'public/imgs/phone/phone.png'" />
               </router-link>
             </div>
             <div class="list">
@@ -47,10 +47,10 @@
             <div class="promo-list">
               <ul>
                 <li>
-                  <img :src="$target +'public/imgs/appliance/appliance-promo1.png'" />
+                  <img :src="'https://6156-pictures.s3.amazonaws.com/' +'public/imgs/appliance/appliance-promo1.png'" />
                 </li>
                 <li>
-                  <img :src="$target +'public/imgs/appliance/appliance-promo2.png'" />
+                  <img :src="'https://6156-pictures.s3.amazonaws.com/' +'public/imgs/appliance/appliance-promo2.png'" />
                 </li>
               </ul>
             </div>
@@ -77,10 +77,10 @@
             <div class="promo-list">
               <ul>
                 <li>
-                  <img :src="$target +'public/imgs/accessory/accessory-promo1.png'" alt />
+                  <img :src="'https://6156-pictures.s3.amazonaws.com/' +'public/imgs/accessory/accessory-promo1.png'" alt />
                 </li>
                 <li>
-                  <img :src="$target +'public/imgs/accessory/accessory-promo2.png'" alt />
+                  <img :src="'https://6156-pictures.s3.amazonaws.com/' +'public/imgs/accessory/accessory-promo2.png'" alt />
                 </li>
               </ul>
             </div>

@@ -17,7 +17,7 @@
           <i class="el-icon-close delete" slot="reference" v-show="isDelete"></i>
         </el-popover>
         <router-link :to="{ path: '/goods/details', query: {productID:item.product_id} }">
-          <img :src="item.product_picture.includes('http:')?item.product_picture:$target + item.product_picture" alt />
+          <img :src="item.product_picture.includes('http:')?item.product_picture:'https://6156-pictures.s3.amazonaws.com/' + item.product_picture" alt />
           <h2>{{item.product_name}}</h2>
           <h3>{{item.product_title}}</h3>
           <p>
