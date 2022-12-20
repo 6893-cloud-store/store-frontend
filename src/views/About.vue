@@ -1,5 +1,5 @@
 <!--
- * @Description: 关于我们页面组件，未完成
+ * @Description:
  * @Author: hai-27
  * @Date: 2020-02-07 16:23:00
  * @LastEditors: hai-27

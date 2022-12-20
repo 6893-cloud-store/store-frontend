@@ -55,7 +55,8 @@
 <!--          <el-menu-item index="/">Home</el-menu-item>-->
           <el-menu-item index="/goods">All Items</el-menu-item>
           <el-menu-item index="/about">About Us</el-menu-item>
-
+          <el-menu-item index="/admin">Admin</el-menu-item>
+<!--          search-->
           <div class="so">
             <el-input placeholder="Please enter searching contents" v-model="search">
               <el-button slot="append" icon="el-icon-search" @click="searchClick"></el-button>
@@ -102,6 +103,7 @@
               <router-link to="/goods">All Items</router-link>
               <span>|</span>
               <router-link to="/about">About Us</router-link>
+              <router-link to="/admin">Admin</router-link>
             </p>
             <p class="coty"> &copy; 2022 All Rights Reserved</p>
           </div>
