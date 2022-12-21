@@ -52,7 +52,7 @@
         <div class="goods-list">
           <ul>
             <li v-for="item in getCheckGoods" :key="item.id">
-              <img :src="item.productImg.includes('http:')?item.productImg:$target + item.productImg" />
+              <img :src="item.productImg.includes('http:')?item.productImg:'https://6156-pictures.s3.amazonaws.com/' + item.productImg" />
               <span class="pro-name">{{item.productName}}</span>
               <span class="pro-price">${{item.price}} x {{item.num}}</span>
               <span class="pro-status"></span>
@@ -282,7 +282,9 @@ export default {
       this.$axios
         .post("/api/user/address/save", {
           user_id: this.$store.getters.getUser.user_id,
-          add: this.add
+          "add.address": this.add.address,
+          "add.linkman": this.add.linkman,
+          "add.phone": this.add.phone
         })
         .then(res => {
           switch (res.data.code) {

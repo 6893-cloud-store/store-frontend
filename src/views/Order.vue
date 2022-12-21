@@ -33,7 +33,7 @@
           <li class="product-list" v-for="(product,i) in item" :key="i">
             <div class="pro-img">
               <router-link :to="{ path: '/goods/details', query: {productID:product.product_id} }">
-                <img :src="$target + product.product_picture" />
+                <img :src="'https://6156-pictures.s3.amazonaws.com/' + product.product_picture" />
               </router-link>
             </div>
             <div class="pro-name">

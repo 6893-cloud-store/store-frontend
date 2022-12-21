@@ -17,7 +17,7 @@
       <div>
         <br/>
         <h3>Administrator Identification (YOU MUST ENTER A VALID TOKEN)</h3><br/>
-        <el-form :inline="true" :model="formInline" class="demo-form-inline">
+        <el-form :inline="true" class="demo-form-inline">
           <el-form-item>
             <el-input v-model="token" placeholder="token" />
           </el-form-item>
@@ -37,7 +37,7 @@
          <el-form-item>
           <el-input v-model="email" placeholder="email" />
         </el-form-item>
-        <el-button @click="user_update">update</el-button>
+        <el-button @click="update">update</el-button>
       </el-form>
     </div>
       <div>
@@ -158,27 +158,27 @@ export default {
           .then(res => {alert(res.data.msg)})
     },
     get() {
-      var api = "/api/admin/product/categories"
+      const api = "/api/admin/product/categories";
       this.$axios
           .get(api)
           .then(res => alert(res.data.msg))
     },
     order_create() {
-      var api = "/api/admin/order/create";
-      var data = {
+      const api = "/api/admin/order/create";
+      const data = {
         "username": this.username3,
         "product_id": parseInt(this.product_id),
         "product_num": parseInt(this.product_num2)
-      }
+      };
       this.$axios
           .post(api, data)
           .then(res => alert(res.data.msg))
     },
     order_remove() {
-      var api = "/api/admin/order/remove"
-      var data = {
-        "order_id":parseInt(this.order_id)
-      }
+      const api = "/api/admin/order/remove";
+      const data = {
+        "order_id": parseInt(this.order_id)
+      };
       this.$axios
           .post(api, data)
           .then(res => alert(res.data.msg))

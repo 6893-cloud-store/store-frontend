@@ -1,16 +1,16 @@
 <template>
   <div class="home" id="home" name="home">
     <!-- 轮播图 -->
-    <div class="block">
-      <el-carousel height="460px">
-        <el-carousel-item v-for="item in carousel" :key="item.carousel_id">
-         <router-link :to="{ path: '/goods/details', query: {productID:item.product_id} }">
-          <img style="height:460px;" :src="item.imgPath.includes('http:')?item.imgPath:$target + item.imgPath" :alt="item.describes" />
-            </router-link>
-        </el-carousel-item>
+<!--    <div class="block">-->
+<!--      <el-carousel height="460px">-->
+<!--        <el-carousel-item v-for="item in carousel" :key="item.carousel_id">-->
+<!--         <router-link :to="{ path: '/goods/details', query: {productID:item.product_id} }">-->
+<!--          <img style="height:460px;" :src="item.imgPath.includes('http:')?item.imgPath:$target + item.imgPath" :alt="item.describes" />-->
+<!--            </router-link>-->
+<!--        </el-carousel-item>-->
 
-      </el-carousel>
-    </div>
+<!--      </el-carousel>-->
+<!--    </div>-->
     <!-- 轮播图END -->
     <div class="main-box">
       <div class="main">

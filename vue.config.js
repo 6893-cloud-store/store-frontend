@@ -11,8 +11,8 @@ module.exports = {
     open: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:5000/', // 本地后端地址
-        //target: 'http://106.15.179.105:3000/', // 线上后端地址
+        // target: 'http://localhost:5000/', // 本地后端地址
+        target: 'https://keimui43t1.execute-api.us-east-1.amazonaws.com', // 线上后端地址
         changeOrigin: true, //允许跨域
         pathRewrite: {
           '^/api': ''
