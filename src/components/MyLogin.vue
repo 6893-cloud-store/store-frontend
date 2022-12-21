@@ -121,12 +121,13 @@ export default {
                 this.notifyError(res.data.msg);
               }
             })
-            .catch(err => {
-              return Promise.reject(err);
-            });
-        } else {
-          return false;
+            // .catch(err => {
+            //   return Promise.reject(err);
+            // });
         }
+        // else {
+        //   return false;
+        // }
       });
     },
     LoginOauth() {
@@ -144,13 +145,13 @@ export default {
             }
           })
     },
+    ...mapActions(["setUser", "setShowLogin"]),
     LoginOauth2() {
       // 通过element自定义表单校验规则，校验用户输入的用户信息
       this.$axios
           .get("/api/oauth/data",{})
           .then(res => {
             if (res.data.code === "001") {
-
               console.log(res.data);
               // 隐藏登录组件
               this.isLogin = false;
