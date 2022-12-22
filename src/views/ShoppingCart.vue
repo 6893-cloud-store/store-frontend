@@ -125,7 +125,7 @@ export default {
       this.updateShoppingCart({ key: key, prop: "check", val: true });
       // 向后端发起更新购物车的数据库信息请求
       this.$axios
-        .post("/api/cart/update", {
+        .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/cart/update", {
           user_id: this.$store.getters.getUser.user_id,
           product_id: productID,
           num: currentValue
@@ -159,7 +159,7 @@ export default {
     // 向后端发起删除购物车的数据库信息请求
     deleteItem(e, id, productID) {
       this.$axios
-        .post("/api/cart/remove", {
+        .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/cart/remove", {
           user_id: this.$store.getters.getUser.user_id,
           product_id: productID
         })

@@ -161,7 +161,7 @@ export default {
       } else {
         // 用户已经登录,获取该用户的购物车信息
         this.$axios
-          .post("/api/cart/list", {
+          .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/cart/list", {
             user_id: val.user_id
           })
           .then(res => {
