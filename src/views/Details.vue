@@ -120,7 +120,7 @@ export default {
     // 获取商品详细信息
     getDetails(val) {
       this.$axios
-        .post("/api/product/detail", {
+        .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/product/detail", {
           productID: val
         })
         .then(res => {
@@ -133,7 +133,7 @@ export default {
     // 获取商品图片
     getDetailsPicture(val) {
       this.$axios
-        .post("/api/product/pictures", {
+        .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/product/pictures", {
           productID: val
         })
         .then(res => {
@@ -151,7 +151,7 @@ export default {
         return;
       }
       this.$axios
-        .post("/api/cart/save", {
+        .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/cart/save", {
           user_id: this.$store.getters.getUser.user_id,
           product_id: this.productID
         })
@@ -187,7 +187,7 @@ export default {
         return;
       }
       this.$axios
-        .post("/api/collect/save", {
+        .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/collect/save", {
           user_id: this.$store.getters.getUser.user_id,
           product_id: this.productID
         })

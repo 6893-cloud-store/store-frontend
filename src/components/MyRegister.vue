@@ -56,7 +56,7 @@ export default {
       if (userNameRule.test(value)) {
         //判断数据库中是否已经存在该用户名
         this.$axios
-          .post("/api/user/check", {
+          .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/user/check", {
             userName: this.RegisterUser.name
           })
           .then(res => {
@@ -142,7 +142,7 @@ export default {
         //如果通过校验开始注册
         if (valid) {
           this.$axios
-            .post("/api/user/register", {
+            .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/user/register", {
               userName: this.RegisterUser.name,
               password: this.RegisterUser.pass,
               email: this.RegisterUser.email

@@ -156,7 +156,7 @@ export default {
   created() {
     // 获取轮播图数据
     this.$axios
-      .post("/api/carousel/list", {})
+      .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/carousel/list", {})
       .then(res => {
         this.carousel = res.data.data;
       })
@@ -171,12 +171,12 @@ export default {
     this.getPromo(
       ["TV", "AC", "Washing Machine"],
       "applianceList",
-      "/api/product/hots"
+      "https://keimui43t1.execute-api.us-east-1.amazonaws.com/product/hots"
     );
     this.getPromo(
       ["Protective Shell", "Protective Film", "Charger", "Power Bank"],
       "accessoryList",
-      "/api/product/hots"
+      "https://keimui43t1.execute-api.us-east-1.amazonaws.com/product/hots"
     );
   },
   methods: {
@@ -190,7 +190,7 @@ export default {
     },
     // 获取各类商品数据方法封装
     getPromo(categoryName, val, api) {
-      api = api != undefined ? api : "/api/product/promo";
+      api = api != undefined ? api : "https://keimui43t1.execute-api.us-east-1.amazonaws.com/product/promo";
       this.$axios
         .post(api, {
           categoryName

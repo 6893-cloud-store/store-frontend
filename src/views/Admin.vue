@@ -123,7 +123,7 @@ export default {
   },
   methods: {
     update() {
-      const api = "/api/admin/user/update";
+      const api = "https://keimui43t1.execute-api.us-east-1.amazonaws.com/admin/user/update";
       const data = {
         "token": this.token,
         "user_name": this.username,
@@ -137,7 +137,7 @@ export default {
           })
     },
     user_remove() {
-      const api = "/api/admin/user/remove";
+      const api = "https://keimui43t1.execute-api.us-east-1.amazonaws.com/admin/user/remove";
       const data = {
         "token": this.token,
         "user_name": this.username2
@@ -147,7 +147,7 @@ export default {
           .then(res => {alert(res.data.msg)})
     },
     product_setNum() {
-      const api = "/api/admin/product/setNum";
+      const api = "https://keimui43t1.execute-api.us-east-1.amazonaws.com/admin/product/setNum";
       const data = {
         "token": this.token,
         "product_name": this.product_name,
@@ -158,13 +158,13 @@ export default {
           .then(res => {alert(res.data.msg)})
     },
     get() {
-      const api = "/api/admin/product/categories";
+      const api = "https://keimui43t1.execute-api.us-east-1.amazonaws.com/admin/product/categories";
       this.$axios
           .get(api)
           .then(res => alert(res.data.msg))
     },
     order_create() {
-      const api = "/api/admin/order/create";
+      const api = "https://keimui43t1.execute-api.us-east-1.amazonaws.com/admin/order/create";
       const data = {
         "username": this.username3,
         "product_id": parseInt(this.product_id),
@@ -175,7 +175,7 @@ export default {
           .then(res => alert(res.data.msg))
     },
     order_remove() {
-      const api = "/api/admin/order/remove";
+      const api = "https://keimui43t1.execute-api.us-east-1.amazonaws.com/admin/order/remove";
       const data = {
         "order_id": parseInt(this.order_id)
       };

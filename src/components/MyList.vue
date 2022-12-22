@@ -65,7 +65,7 @@ export default {
   methods: {
     deleteCollect(product_id) {
       this.$axios
-        .post("/api/collect/remove", {
+        .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/collect/remove", {
           user_id: this.$store.getters.getUser.user_id,
           product_id: product_id
         })

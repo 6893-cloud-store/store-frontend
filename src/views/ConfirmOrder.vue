@@ -253,7 +253,7 @@ export default {
     //删除地址数据!
     remove(){
       this.$axios
-        .post("/api/user/address/remove", {
+        .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/user/address/remove", {
           id: this.delId
         })
         .then(res => {
@@ -280,7 +280,7 @@ export default {
     save(){
 
       this.$axios
-        .post("/api/user/address/save", {
+        .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/user/address/save", {
           user_id: this.$store.getters.getUser.user_id,
           "add.address": this.add.address,
           "add.linkman": this.add.linkman,
@@ -307,7 +307,7 @@ export default {
     },
     addOrder() {
       this.$axios
-        .post("/api/order/save", {
+        .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/order/save", {
           user_id: this.$store.getters.getUser.user_id,
           products: this.getCheckGoods
         })

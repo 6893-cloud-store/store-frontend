@@ -32,7 +32,7 @@ export default {
   activated() {
     // 获取收藏数据
     this.$axios
-      .post("/api/collect/list", {
+      .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/collect/list", {
         user_id: this.$store.getters.getUser.user_id
       })
       .then(res => {

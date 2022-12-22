@@ -165,7 +165,7 @@ export default {
     },
     getCategory() {
       this.$axios
-        .post("/api/product/category/list", {})
+        .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/product/category/list", {})
         .then(res => {
           const val = {
             category_id: 0,
@@ -182,8 +182,8 @@ export default {
     getData() {
       const api =
         this.categoryID.length == 0
-          ? "/api/product/all"
-          : "/api/product/bycategory";
+          ? "https://keimui43t1.execute-api.us-east-1.amazonaws.com/product/all"
+          : "https://keimui43t1.execute-api.us-east-1.amazonaws.com/product/bycategory";
       this.$axios
         .post(api, {
           categoryID: this.categoryID,
@@ -201,7 +201,7 @@ export default {
     // 通过搜索条件向后端请求商品数据
     getProductBySearch() {
       this.$axios
-        .post("/api/product/search", {
+        .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/product/search", {
           search: this.search,
           currentPage: this.currentPage,
           pageSize: this.pageSize

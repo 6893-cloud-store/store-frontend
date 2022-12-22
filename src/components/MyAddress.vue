@@ -65,7 +65,7 @@ export default {
     
         //如果通过校验开始注册
           this.$axios
-            .post("/api/user/address/save", {
+            .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/user/address/save", {
                 this.address
             })
             .then(res => {

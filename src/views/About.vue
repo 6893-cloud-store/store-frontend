@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     send() {
-      const api = "/api/feedback";
+      const api = "https://keimui43t1.execute-api.us-east-1.amazonaws.com/feedback";
       const data = {'msg': this.textarea}
       this.$axios
           .post(api, data)

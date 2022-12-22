@@ -87,7 +87,7 @@ export default {
   activated() {
     // 获取订单数据
     this.$axios
-      .post("/api/order/list", {
+      .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/order/list", {
         user_id: this.$store.getters.getUser.user_id
       })
       .then(res => {

@@ -98,7 +98,7 @@ export default {
         //如果通过校验开始登录
         if (valid) {
           this.$axios
-            .post("/api/user/login", {
+            .post("https://keimui43t1.execute-api.us-east-1.amazonaws.com/user/login", {
               userName: this.LoginUser.name,
               password: this.LoginUser.pass
             })
@@ -132,7 +132,7 @@ export default {
     },
     LoginOauth() {
       this.$axios
-          .get("/api/user/oauth",{})
+          .get("https://keimui43t1.execute-api.us-east-1.amazonaws.com/user/oauth",{})
           .then(res => {
             if (res.data.code === "001") {
               // 跳转到新页面
@@ -149,7 +149,7 @@ export default {
     LoginOauth2() {
       // 通过element自定义表单校验规则，校验用户输入的用户信息
       this.$axios
-          .get("/api/oauth/data",{})
+          .get("https://keimui43t1.execute-api.us-east-1.amazonaws.com/oauth/data",{})
           .then(res => {
             if (res.data.code === "001") {
               // 隐藏登录组件
