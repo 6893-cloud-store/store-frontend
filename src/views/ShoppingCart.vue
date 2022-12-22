@@ -36,7 +36,7 @@
           </div>
           <div class="pro-img">
             <router-link :to="{ path: '/goods/details', query: {productID:item.productID} }">
-              <img :src="item.productImg.includes('http:')?item.productImg:'https://keimui43t1.execute-api.us-east-1.amazonaws.com/' + item.productImg" />
+              <img :src="item.productImg.includes('http:')?item.productImg:'https://6156-pictures.s3.amazonaws.com/' + item.productImg" />
             </router-link>
           </div>
           <div class="pro-name">
