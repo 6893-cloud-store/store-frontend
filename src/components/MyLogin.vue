@@ -152,7 +152,6 @@ export default {
           .get("/api/oauth/data",{})
           .then(res => {
             if (res.data.code === "001") {
-              console.log(res.data);
               // 隐藏登录组件
               this.isLogin = false;
               // 登录信息存到本地

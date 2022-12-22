@@ -163,7 +163,6 @@ export default {
       }
       this.backtop();
     },
-    // 向后端请求分类列表数据
     getCategory() {
       this.$axios
         .post("/api/product/category/list", {})
@@ -180,9 +179,7 @@ export default {
           return Promise.reject(err);
         });
     },
-    // 向后端请求全部商品或分类商品数据
     getData() {
-      // 如果分类列表为空则请求全部商品数据，否则请求分类商品数据
       const api =
         this.categoryID.length == 0
           ? "/api/product/all"
